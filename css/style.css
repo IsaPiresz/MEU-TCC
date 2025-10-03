@@ -1,0 +1,182 @@
+/* Paleta principal */
+:root {
+    --blue: #0b64d6;
+    --green: #0fa876;
+    --red: #e03b3b;
+    --yellow: #f0b400;
+    --bg: #ffffff;
+    --muted: #444;
+    --max-width: 1000px;
+    --radius: 12px;
+    --font-sans: "Segoe UI", Arial, sans-serif;
+  }
+  
+  /* Reset básico */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: var(--font-sans);
+    background: linear-gradient(180deg, #eaf5ff 0%, #ffffff 100%);
+    color: #222;
+    line-height: 1.6;
+  }
+  
+  /* Header */
+  .site-header {
+    background: var(--blue);
+    color: #fff;
+    padding: 1.5rem 0;
+    text-align: center;
+  }
+  .site-header h1 {
+    font-size: 1.8rem;
+    margin-bottom: .3rem;
+  }
+  .site-header .subtitle {
+    font-size: 1rem;
+    color: #fffa;
+  }
+  
+  /* Navegação */
+  .nav-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .nav-list a {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    padding: .4rem .7rem;
+    border-radius: 6px;
+    transition: background .2s;
+  }
+  .nav-list a:hover {
+    background: rgba(255,255,255,0.2);
+  }
+  
+  /* Cards/seções */
+  .card {
+    background: #fff;
+    margin: 1rem auto;
+    padding: 1.2rem;
+    border-radius: var(--radius);
+    max-width: var(--max-width);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  .card h2 {
+    margin-bottom: .8rem;
+    border-left: 6px solid var(--green);
+    padding-left: .5rem;
+    color: var(--blue);
+  }
+  .card h3 {
+    color: var(--red);
+    margin-top: 1rem;
+  }
+  
+  /* Botões */
+  .btn {
+    padding: .6rem 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .btn.primary {
+    background: linear-gradient(90deg, var(--blue), var(--green));
+    color: #fff;
+  }
+  .btn.primary:hover {
+    opacity: 0.9;
+  }
+  .btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Pictogramas */
+  .prototype {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  .pictogram-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1rem;
+  }
+  .pictogram {
+    background: var(--yellow);
+    border-radius: 10px;
+    border: 2px solid var(--red);
+    padding: .6rem;
+    cursor: pointer;
+    text-align: center;
+    transition: transform .2s;
+  }
+  .pictogram:hover {
+    transform: scale(1.05);
+  }
+  .pictogram img {
+    border-radius: 8px;
+    margin-bottom: .4rem;
+  }
+  .pictogram span {
+    font-weight: bold;
+  }
+  
+  /* Frase construída */
+  .message-board {
+    background: #fdfdfd;
+    border: 2px solid var(--green);
+    border-radius: 10px;
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+  .message-board h3 {
+    color: var(--green);
+  }
+  
+  /* Formulário feedback */
+  .feedback-form label {
+    font-weight: bold;
+    margin-top: .6rem;
+    display: block;
+  }
+  .feedback-form input,
+  .feedback-form select,
+  .feedback-form textarea {
+    width: 100%;
+    padding: .5rem;
+    margin-top: .3rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  .feedback-response {
+    margin-top: .6rem;
+    font-weight: bold;
+    color: var(--green);
+  }
+  
+  /* Tabela */
+  .table th {
+    background: var(--blue);
+    color: #fff;
+  }
+  .table td, .table th {
+    padding: .6rem;
+    border: 1px solid #ddd;
+  }
+  
+  /* Footer */
+  .site-footer {
+    background: var(--red);
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+  

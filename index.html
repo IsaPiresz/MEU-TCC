@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TCC - Aplicativo CAA para Autismo Não Verbal</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <h1>Aplicativo CAA para Pessoas com Autismo Não Verbal</h1>
+      <p class="subtitle">Desenvolvimento, protótipo e validação</p>
+      <nav aria-label="Navegação principal">
+        <ul class="nav-list">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#objetivos">Objetivos</a></li>
+          <li><a href="#metodologia">Metodologia</a></li>
+          <li><a href="#requisitos">Requisitos</a></li>
+          <li><a href="#prototipo">Protótipo</a></li>
+          <li><a href="#validacao">Validação</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container" role="main">
+    <section id="sobre" class="card" aria-labelledby="sobre-h">
+      <h2 id="sobre-h">Resumo</h2>
+      <p>
+        Projeto de TCC que propõe o desenvolvimento de um aplicativo de Comunicação Alternativa e Aumentativa (CAA) voltado a pessoas com autismo não verbal, com foco em acessibilidade, interface intuitiva e adaptação ao contexto brasileiro.
+      </p>
+    </section>
+
+    <section id="objetivos" class="card" aria-labelledby="obj-h">
+      <h2 id="obj-h">Objetivos</h2>
+      <ul>
+        <li>Analisar dificuldades de comunicação de pessoas com autismo não verbal.</li>
+        <li>Pesquisar aplicativos de CAA existentes (potencialidades e limitações).</li>
+        <li>Definir requisitos funcionais e de usabilidade (acessibilidade, interface amigável, contexto brasileiro).</li>
+        <li>Desenvolver protótipos baseados em pictogramas, imagens e síntese de voz.</li>
+        <li>Validar o aplicativo com familiares, profissionais e usuários finais.</li>
+        <li>Propor melhorias contínuas a partir do feedback.</li>
+      </ul>
+    </section>
+
+    <section id="metodologia" class="card" aria-labelledby="met-h">
+      <h2 id="met-h">Metodologia</h2>
+      <ol>
+        <li>Revisão bibliográfica e análise de ferramentas CAA existentes.</li>
+        <li>Levantamento com familiares e profissionais (entrevistas / questionários).</li>
+        <li>Definição de requisitos e wireframes de baixa fidelidade.</li>
+        <li>Desenvolvimento de protótipo interativo com pictogramas e síntese de voz.</li>
+        <li>Testes de usabilidade e ajustes iterativos.</li>
+      </ol>
+    </section>
+
+    <section id="requisitos" class="card" aria-labelledby="req-h">
+      <h2 id="req-h">Requisitos Funcionais e de Usabilidade</h2>
+      <h3>Funcionais</h3>
+      <ul>
+        <li>Banco de pictogramas categorizados (com busca e favoritos).</li>
+        <li>Construção de frases por seleção (message board).</li>
+        <li>Síntese de voz para frases/palavras selecionadas.</li>
+        <li>Modo de tamanho e contraste ajustável.</li>
+      </ul>
+      <h3>Usabilidade / Acessibilidade</h3>
+      <ul>
+        <li>Interface limpa, poucas distrações visuais.</li>
+        <li>Suporte a toques grandes para quem tem coordenação motora reduzida.</li>
+        <li>Leituras de tela compatíveis e labels ARIA.</li>
+        <li>Personalização: voz, velocidade, e pictogramas culturais brasileiros.</li>
+      </ul>
+    </section>
+
+    <section id="prototipo" class="card" aria-labelledby="proto-h">
+      <h2 id="proto-h">Protótipo Interativo (demonstração)</h2>
+      <p>Exemplo simples: toque em um pictograma para adicioná-lo à frase e ouvir a síntese de voz.</p>
+
+      <div class="prototype" aria-live="polite">
+        <div class="pictogram-grid" id="pictogramGrid">
+          <!-- Pictogramas (exemplos): cada botão tem data-text que é o texto a falar -->
+          <button class="pictogram" data-text="Quero" aria-label="Pictograma quero">
+            <img src="https://via.placeholder.com/96?text=Quero" alt="Pictograma: quero" />
+            <span>Quero</span>
+          </button>
+
+          <button class="pictogram" data-text="Comer" aria-label="Pictograma comer">
+            <img src="https://via.placeholder.com/96?text=Comer" alt="Pictograma: comer" />
+            <span>Comer</span>
+          </button>
+
+          <button class="pictogram" data-text="Água" aria-label="Pictograma água">
+            <img src="https://via.placeholder.com/96?text=Água" alt="Pictograma: água" />
+            <span>Água</span>
+          </button>
+
+          <button class="pictogram" data-text="Brincar" aria-label="Pictograma brincar">
+            <img src="https://via.placeholder.com/96?text=Brincar" alt="Pictograma: brincar" />
+            <span>Brincar</span>
+          </button>
+        </div>
+
+        <div class="message-board" id="messageBoard" aria-live="polite" aria-atomic="true">
+          <h3>Frase construída</h3>
+          <div id="phrase" class="phrase" aria-label="Frase construída" tabindex="0"></div>
+          <div class="controls">
+            <button id="speakBtn" class="btn primary">Falar</button>
+            <button id="clearBtn" class="btn">Limpar</button>
+          </div>
+        </div>
+      </div>
+
+      <p class="note">Observação: este protótipo usa a síntese de voz do navegador (Web Speech API). Em dispositivos sem suporte, o recurso ficará indisponível.</p>
+    </section>
+
+    <section id="validacao" class="card" aria-labelledby="val-h">
+      <h2 id="val-h">Validação</h2>
+      <p>Plano de validação:</p>
+      <ul>
+        <li>Recrutamento de familiares e profissionais para testes de usabilidade (5–15 participantes por rodada).</li>
+        <li>Medição de eficiência: número de cliques para formar uma frase, tempo de tarefa, taxa de sucesso.</li>
+        <li>Feedback qualitativo: entrevistas semiestruturadas.</li>
+        <li>Iterações: 3 ciclos de ajustes com protótipos de média e alta fidelidade.</li>
+      </ul>
+
+      <h3>Formulário de feedback</h3>
+      <form id="feedbackForm" class="feedback-form" aria-labelledby="fb-h">
+        <label for="nome">Nome (opcional)</label>
+        <input id="nome" name="nome" type="text" />
+
+        <label for="role">Quem é você?</label>
+        <select id="role" name="role" required>
+          <option value="">Selecione</option>
+          <option>Familiar</option>
+          <option>Profissional da saúde/educação</option>
+          <option>Usuário final</option>
+          <option>Outro</option>
+        </select>
+
+        <label for="comentario">Comentário / Sugestões</label>
+        <textarea id="comentario" name="comentario" rows="4" required></textarea>
+
+        <button type="submit" class="btn primary">Enviar feedback</button>
+      </form>
+
+      <div id="feedbackResponse" class="feedback-response" aria-live="polite"></div>
+    </section>
+
+    <section id="cronograma" class="card" aria-labelledby="cron-h">
+      <h2 id="cron-h">Cronograma (exemplo resumido)</h2>
+      <table class="table" role="table">
+        <thead>
+          <tr><th>Fase</th><th>Período</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Revisão bibliográfica</td><td>Meses 1–2</td></tr>
+          <tr><td>Levantamento com usuários</td><td>Meses 2–3</td></tr>
+          <tr><td>Desenvolvimento protótipo</td><td>Meses 3–5</td></tr>
+          <tr><td>Testes e validação</td><td>Meses 5–7</td></tr>
+          <tr><td>Ajustes finais e documentação</td><td>Meses 7–8</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="contato" class="card" aria-labelledby="cont-h">
+      <h2 id="cont-h">Contato</h2>
+      <p>Autor: <strong>Seu nome</strong> — Curso — Universidade</p>
+      <p>Email: <a href="mailto:seu.email@exemplo.com">seu.email@exemplo.com</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© <span id="year"></span> - Projeto de TCC. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
